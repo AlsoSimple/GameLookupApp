@@ -1,0 +1,256 @@
+@use '../../style/Globals' as *;
+
+.page {
+  min-height: 100vh;
+  background: $background;
+}
+
+.back {
+  position: absolute;
+  top: 1.2rem;
+  left: 1rem;
+  z-index: 10;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: $on-background;
+  background: rgba($surface-container-lowest, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 4px 20px $shadow-ambient;
+  transition: transform 0.3s ease-in-out;
+
+  &:active {
+    transform: scale(0.92);
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, $background, transparent);
+}
+
+.content {
+  padding: 0 1.5rem 2rem;
+  margin-top: -2rem;
+  position: relative;
+}
+
+.titleSection {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $secondary;
+  margin-bottom: 0.3rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: $on-background;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: $on-surface-variant;
+}
+
+.metaRow {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  background: $surface-container-low;
+  border-radius: $radius-lg;
+  margin-bottom: 2rem;
+}
+
+.metaItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.metaLabel {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $on-surface-variant;
+}
+
+.metaValue {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: $on-background;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $on-background;
+  margin-bottom: 0.8rem;
+}
+
+.description {
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: $on-surface-variant;
+  white-space: pre-line;
+}
+
+.screenshots {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.screenshot {
+  width: 82%;
+  min-width: 82%;
+  border-radius: $radius-md;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.sysReqs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  background: $surface-container-low;
+  border-radius: $radius-lg;
+}
+
+.reqItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.reqLabel {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $on-surface-variant;
+}
+
+.reqValue {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: $on-background;
+}
+
+.playButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: $radius-full;
+  font-family: $font-primary;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: $primary;
+  color: $on-primary;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-top: 0.5rem;
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
+
+.playIcon {
+  font-size: 1.1rem;
+}
+
+// Status
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 6rem 1.5rem;
+  color: $on-surface-variant;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid $surface-container-high;
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: $error;
+  font-size: 0.9rem;
+}
+
+.backButton {
+  padding: 0.6rem 1.5rem;
+  border-radius: $radius-full;
+  border: none;
+  background: $primary;
+  color: $on-primary;
+  font-family: $font-primary;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}

@@ -1,0 +1,38 @@
+@use '../../style/Globals' as *;
+
+.header {
+  padding: 3.5rem 1.5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient {
+  position: absolute;
+  top: -40%;
+  right: -30%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba($primary-container, 0.2), rgba($secondary-container, 0.15));
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $on-surface-variant;
+  margin-bottom: 0.3rem;
+  position: relative;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: $on-background;
+  position: relative;
+}

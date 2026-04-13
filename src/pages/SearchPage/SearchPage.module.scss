@@ -1,0 +1,61 @@
+@use '../../style/Globals' as *;
+
+.page {
+  padding-bottom: 1rem;
+}
+
+.resultCount {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $on-surface-variant;
+  padding: 0 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+// Asymmetric grid
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 0 1.5rem;
+}
+
+.gridFeatured {
+  grid-column: 1 / -1;
+}
+
+.gridItem {
+  // Default single column
+}
+
+// Status
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 4rem 1.5rem;
+  font-size: 0.9rem;
+  color: $on-surface-variant;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid $surface-container-high;
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: $error;
+}

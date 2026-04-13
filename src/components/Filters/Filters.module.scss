@@ -1,0 +1,81 @@
+@use '../../style/Globals' as *;
+
+.filters {
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.select {
+  flex: 1;
+  padding: 0.6rem 0.9rem;
+  border-radius: $radius-full;
+  font-family: $font-primary;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: $surface-container-low;
+  color: $on-surface-variant;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%235a6062'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2rem;
+  transition: background 0.3s ease-in-out;
+
+  &:focus {
+    background: $surface-container;
+  }
+
+  option {
+    background: $surface-container-lowest;
+    color: $on-background;
+  }
+}
+
+.genres {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.chip {
+  flex-shrink: 0;
+  padding: 0.45rem 1rem;
+  border-radius: $radius-md;
+  font-family: $font-primary;
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: $surface-container-high;
+  color: $on-surface-variant;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &.active {
+    background: $secondary-container;
+    color: $on-secondary-container;
+    font-weight: 600;
+  }
+}
